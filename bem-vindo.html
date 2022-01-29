@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- META TAGS GOOGLE -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Telemedicos - Seu médico 24h</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Front-end: Everton Paixão" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- META TAGS FACEBOOK -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+
+    <!-- URL SITE -->
+    <base href="" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Theme Site CSS -->
+    <link rel="stylesheet" href="styles/consulta.css">
+</head>
+
+<body>
+
+    <header id="header">
+        
+    </header>
+
+    <main id="main">
+
+        <form id="regForm" class="formLogin" action="painel.html">
+
+            <img src="images/logo-telemedicos.svg" alt="" width="180" />
+            <h2>bem vindo(a)!</h2>
+            <p>Faça o login abaixo</p>
+            <label>Email</label>
+            <input class="form-control" type="email" name="email" placeholder="Email" required />
+            <label>Senha</label>
+            <input type="password" name="password" placeholder="Senha" id="password" required>
+            <div class="box-checkbox">
+                <input type="checkbox" id="logado" name="logado">
+                <label for="logado" class="checktext">Continuar logado</label>
+            </div>
+            <span class="lnr lnr-eye"><img src="images/icon-eye.svg" alt="" /></span>
+            <input type="submit" id="login" value="Login" />
+
+        </form>
+
+    </main>    
+
+    <a class="link-esqueci" href="esqueci-senha.html">Esqueci minha senha</a>
+
+
+    <!-- JS -->
+    <script>
+        let btn = document.querySelector('.lnr-eye');
+        btn.addEventListener('click', function () {
+            let input = document.querySelector('#password');
+            if (input.getAttribute('type') == 'password') {
+                input.setAttribute('type', 'text');
+            } else {
+                input.setAttribute('type', 'password');
+            }
+        });
+        let btn2 = document.querySelector('.lnr-eye-repetir');
+        btn2.addEventListener('click', function () {
+            let input = document.querySelector('#password-repetir');
+            if (input.getAttribute('type') == 'password') {
+                input.setAttribute('type', 'text');
+            } else {
+                input.setAttribute('type', 'password');
+            }
+        });
+    </script>
+
+    <script>
+        var currentTab = 0; // Current tab is set to be the first tab (0)
+        showTab(currentTab); // Display the current tab
+
+        function showTab(n) {
+            // This function will display the specified tab of the form...
+            var x = document.getElementsByClassName("tab");
+            x[n].style.display = "block";
+            //... and fix the Previous/Next buttons:
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+            }
+            if (n == (x.length - 1)) {
+                document.getElementById("nextBtn").innerHTML = "Submit";
+            } else {
+                document.getElementById("nextBtn").innerHTML = "Next";
+            }
+            //... and run a function that will display the correct step indicator:
+            fixStepIndicator(n)
+        }
+
+        function nextPrev(n) {
+
+            // This function will figure out which tab to display
+            var x = document.getElementsByClassName("tab");
+            // Exit the function if any field in the current tab is invalid:
+            if (n == 1 && !validateForm()) return false;
+            // Hide the current tab:
+            x[currentTab].style.display = "none";
+            // Increase or decrease the current tab by 1:
+            currentTab = currentTab + n;
+            // if you have reached the end of the form...
+            if (currentTab >= x.length) {
+                // ... the form gets submitted:
+                document.getElementById("regForm").submit();
+                return false;
+            }
+            // Otherwise, display the correct tab:
+            showTab(currentTab);
+        }
+
+        function validateForm() {
+
+
+            let inputPass = document.querySelector('#password');
+            let inputConfirmPass = document.querySelector('#password-repetir');
+
+            /* inputConfirmPass.addEventListener('focusout', () => {
+                if( inputPass.value !== inputConfirmPass.value){
+                    document.getElementById('mensagemError').innerHTML = 'As senhas não são iguais';
+                }
+            }) */
+
+            // This function deals with validation of the form fields
+            var x, y, i, valid = true;
+            x = document.getElementsByClassName("tab");
+            y = x[currentTab].getElementsByTagName("input");
+            // A loop that checks every input field in the current tab:
+            for (i = 0; i < y.length; i++) {
+                // If a field is empty...
+                if (y[i].value == "" || inputPass.value !== inputConfirmPass.value) {
+                    // add an "invalid" class to the field:
+                    y[i].className += " invalid";
+                    document.getElementById('mensagemError').innerHTML = 'As senhas não são iguais';
+                    // and set the current valid status to false
+                    valid = false;
+                }
+            }
+            // If the valid status is true, mark the step as finished and valid:
+            if (valid) {
+                document.getElementById('mensagemError').style.display = "none";
+                document.getElementsByClassName("step")[currentTab].className += " finish";
+            }
+            return valid; // return the valid status
+        }
+
+        function fixStepIndicator(n) {
+            // This function removes the "active" class of all steps...
+            var i, x = document.getElementsByClassName("step");
+            for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace(" active", "");
+            }
+            //... and adds the "active" class on the current step:
+            x[n].className += " active";
+        }
+    </script>
+
+    <script>
+
+        /* Máscaras ER */
+        function mascara(o, f) {
+            v_obj = o
+            v_fun = f
+            setTimeout("execmascara()", 1)
+        }
+        function execmascara() {
+            v_obj.value = v_fun(v_obj.value)
+        }
+        function mtel(v) {
+            v = v.replace(/\D/g, "");             //Remove tudo o que não é dígito
+            v = v.replace(/^(\d{2})(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+            v = v.replace(/(\d)(\d{4})$/, "$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
+            return v;
+        }
+        function validaData(v) {
+            v = v.replace(/\D/g, "")                //Remove tudo o que não é dígito
+            v = v.replace(/(\d{2})(\d)/, "$1/$2") //Coloca barra entre o primeiro e segundo dígito
+            v = v.replace(/(\d{2})(\d)/, "$1/$2") //Coloca barra entre o segundo e terceiro dígito
+            return v
+        }
+        function mascaraCpf(v) {
+            v = v.replace(/\D/g, "")                //Remove tudo o que não é dígito
+            v = v.replace(/(\d{3})(\d)/, "$1.$2")
+            v = v.replace(/(\d{3})(\d)/, "$1.$2")
+            v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2")
+            return v
+        }
+        function tamanhoCpf(field) {
+            str = field.value;
+            if (str.length > 13) {
+                field.value = str.substring(0, str.length - 1);
+            }
+        }
+        function tamanhoData(field) {
+            str = field.value;
+            if (str.length > 9) {
+                field.value = str.substring(0, str.length - 1);
+            }
+        }
+        function tamanhoCelular(field) {
+            str = field.value;
+            if (str.length > 14) {
+                field.value = str.substring(0, str.length - 1);
+            }
+        }
+        function id(el) {
+            return document.getElementById(el);
+        }
+        window.onload = function () {
+            id('telefone').onkeypress = function () {
+                mascara(this, mtel);
+                tamanhoCelular(this)
+            }
+            id('cpf').onkeypress = function () {
+                tamanhoCpf(this)
+            }
+            id('data').onkeypress = function () {
+                tamanhoData(this)
+            }
+        }
+
+        let cpf = id("cpf");
+        cpf.onkeyup = function () {
+            mascara(this, mascaraCpf);
+        };
+        let data = id("data");
+        data.onkeyup = function () {
+            mascara(this, validaData);
+        };
+
+    </script>
+
+
+</body>
+
+</html>

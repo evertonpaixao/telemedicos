@@ -35,7 +35,7 @@ $nav-size: 14px;
 $nav-color: #006096;
 $nav-weight: 700;
 
-$placeholder-color: #006096;
+$placeholder-color: #8E8EA9;
 
 $scroll-color-bg: #016096;
 $scroll-color-bg-thumb: #ca8e2b;
@@ -61,6 +61,25 @@ p {
 
 a {
     text-decoration: none;
+}
+
+/*-----Form-------*/
+/*Placeholder*/
+::-webkit-input-placeholder {
+/* Chrome/Opera/Safari */
+color: $placeholder-color !important;
+}
+::-moz-placeholder {
+/* Firefox 19+ */
+color: $placeholder-color !important;
+}
+:-ms-input-placeholder {
+/* IE 10+ */
+color: $placeholder-color !important;
+}
+:-moz-placeholder {
+/* Firefox 18- */
+color: $placeholder-color !important;
 }
 
 //Page
@@ -189,6 +208,7 @@ a {
     top: -71px;
     left: 8px;
     cursor: pointer;
+    background-color: #fff;
 }
 
 .lnr-eye-repetir {
@@ -302,4 +322,97 @@ a {
         background-color: #04AA6D;
     }
 
+}
+
+//Login
+#regForm.formLogin {
+    max-width: 440px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        font-size: 32px;
+        color: $color-second;
+        font-family: $title-font;
+        margin: 0;
+        margin-top: 2rem;
+    }
+
+    p {
+        font-size: 16px;
+        font-family: $paragraph-font;
+        color: #A5A5BA;
+        margin: 0;
+    }
+
+    input {
+        max-width: 440px;
+    }
+
+    label {
+        width: 100%;
+    }
+
+    .lnr-eye {
+        top: -67px;
+        left: 191px;
+    }
+
+    .box-checkbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 1rem;
+
+        #logado {
+            max-width: inherit;
+            width: 17px;
+        }
+
+        .checktext {
+            margin: 0;
+            margin-left: 6px;
+            font-size: 14px;
+            font-family: $title-font;
+            color: #32324D;
+        }
+    }
+
+    #login {
+        background-color: $color-primary;
+        color: $color-white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: $title-font;
+        cursor: pointer;
+        margin: 0 auto;
+        display: table;
+        font-size: 14px;
+        margin-top: 16px;
+        border-radius: 4px;
+        margin-top: 0rem;
+        font-weight: 800;
+        &:hover {
+            background-color: $color-second;
+        }
+    }
+
+}
+
+.link-esqueci {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    color: $color-primary;
+    font-family: $title-font;
+    font-size: 12px;
+    &:hover {
+        color: $color-second;
+        text-decoration: underline;
+    }
 }

@@ -28,6 +28,28 @@ a {
   text-decoration: none;
 }
 
+/*-----Form-------*/
+/*Placeholder*/
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #8E8EA9 !important;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #8E8EA9 !important;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #8E8EA9 !important;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #8E8EA9 !important;
+}
+
 #header {
   margin: 0 auto;
   display: table;
@@ -140,6 +162,7 @@ a {
   top: -71px;
   left: 8px;
   cursor: pointer;
+  background-color: #fff;
 }
 
 .lnr-eye-repetir {
@@ -236,4 +259,86 @@ a {
 }
 #regForm .step.finish {
   background-color: #04AA6D;
+}
+
+#regForm.formLogin {
+  max-width: 440px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+#regForm.formLogin h2 {
+  font-size: 32px;
+  color: #ca8e2b;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  margin-top: 2rem;
+}
+#regForm.formLogin p {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #A5A5BA;
+  margin: 0;
+}
+#regForm.formLogin input {
+  max-width: 440px;
+}
+#regForm.formLogin label {
+  width: 100%;
+}
+#regForm.formLogin .lnr-eye {
+  top: -67px;
+  left: 191px;
+}
+#regForm.formLogin .box-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+#regForm.formLogin .box-checkbox #logado {
+  max-width: inherit;
+  width: 17px;
+}
+#regForm.formLogin .box-checkbox .checktext {
+  margin: 0;
+  margin-left: 6px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  color: #32324D;
+}
+#regForm.formLogin #login {
+  background-color: #006096;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  margin: 0 auto;
+  display: table;
+  font-size: 14px;
+  margin-top: 16px;
+  border-radius: 4px;
+  margin-top: 0rem;
+  font-weight: 800;
+}
+#regForm.formLogin #login:hover {
+  background-color: #ca8e2b;
+}
+
+.link-esqueci {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  color: #006096;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+}
+.link-esqueci:hover {
+  color: #ca8e2b;
+  text-decoration: underline;
 }/*# sourceMappingURL=consulta.css.map */
