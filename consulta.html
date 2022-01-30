@@ -51,8 +51,10 @@
                 <input class="form-control" type="text" name="cpf" placeholder="CPF" id="cpf" required />
                 <input type="password" name="password" placeholder="Senha" id="password">
                 <input type="password" name="password" placeholder="Confirmação de senha" id="password-repetir">
-                <input type="checkbox" id="dicas" name="dicas">
-                <label for="dicas" class="checktext">Quero receber dicas de saúde por emaill</label>
+                <div class="box-checkbox">
+                    <input type="checkbox" id="dicas" name="dicas">
+                    <label for="dicas" class="checktext">Quero receber dicas de saúde por emaill</label>
+                </div>
                 <span class="lnr lnr-eye"><img src="images/icon-eye.svg" alt="" /></span>
                 <span class="lnr lnr-eye-repetir"><img src="images/icon-eye.svg" alt="" /></span>
             </div>
@@ -111,15 +113,15 @@
             var x = document.getElementsByClassName("tab");
             x[n].style.display = "block";
             //... and fix the Previous/Next buttons:
-            if (n == 0) {
+            /* if (n == 0) {
                 document.getElementById("prevBtn").style.display = "none";
             } else {
                 document.getElementById("prevBtn").style.display = "inline";
-            }
+            } */
             if (n == (x.length - 1)) {
-                document.getElementById("nextBtn").innerHTML = "Submit";
+                document.getElementById("nextBtn").innerHTML = "Continuar";
             } else {
-                document.getElementById("nextBtn").innerHTML = "Next";
+                document.getElementById("nextBtn").innerHTML = "Continuar";
             }
             //... and run a function that will display the correct step indicator:
             fixStepIndicator(n)
@@ -208,12 +210,12 @@
             v = v.replace(/(\d)(\d{4})$/, "$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
             return v;
         }
-        function validaData(v) {
+        /* function validaData(v) {
             v = v.replace(/\D/g, "")                //Remove tudo o que não é dígito
             v = v.replace(/(\d{2})(\d)/, "$1/$2") //Coloca barra entre o primeiro e segundo dígito
             v = v.replace(/(\d{2})(\d)/, "$1/$2") //Coloca barra entre o segundo e terceiro dígito
             return v
-        }
+        } */
         function mascaraCpf(v) {
             v = v.replace(/\D/g, "")                //Remove tudo o que não é dígito
             v = v.replace(/(\d{3})(\d)/, "$1.$2")
@@ -227,12 +229,12 @@
                 field.value = str.substring(0, str.length - 1);
             }
         }
-        function tamanhoData(field) {
+        /* function tamanhoData(field) {
             str = field.value;
             if (str.length > 9) {
                 field.value = str.substring(0, str.length - 1);
             }
-        }
+        } */
         function tamanhoCelular(field) {
             str = field.value;
             if (str.length > 14) {
@@ -250,19 +252,19 @@
             id('cpf').onkeypress = function () {
                 tamanhoCpf(this)
             }
-            id('data').onkeypress = function () {
+            /* id('data').onkeypress = function () {
                 tamanhoData(this)
-            }
+            } */
         }
 
         let cpf = id("cpf");
         cpf.onkeyup = function () {
             mascara(this, mascaraCpf);
         };
-        let data = id("data");
+        /* let data = id("data");
         data.onkeyup = function () {
             mascara(this, validaData);
-        };
+        }; */
 
     </script>
 

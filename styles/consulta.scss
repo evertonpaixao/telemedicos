@@ -113,7 +113,7 @@ color: $placeholder-color !important;
     align-items: center;
     flex-flow: column;
     max-width: 258px;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
 
     .link-pagamento {
@@ -157,6 +157,7 @@ color: $placeholder-color !important;
     .box-border {
         border: 1px solid $color-primary;
         border-radius: 8px;
+        padding: .5rem;
     }
 
 }
@@ -165,6 +166,8 @@ color: $placeholder-color !important;
 .tab {
 
     padding: 2rem 0;
+    width: 90%;
+    margin: 0 auto;
 
     .icon {
         margin: 0 auto;
@@ -205,23 +208,25 @@ color: $placeholder-color !important;
 .lnr-eye,
 .lnr-eye-repetir {
     position: relative;
-    top: -71px;
-    left: 8px;
+    top: -97px;
+    left: 81%;
     cursor: pointer;
     background-color: #fff;
+    padding: 2px;
 }
 
 .lnr-eye-repetir {
-    top: -29px;
-    left: -12px;
+    top: -51px;
+    left: 72%;
 }
 
 //Form - steps
 #regForm {
 
-    max-width: 270px;
+    max-width: 300px;
     margin: 0 auto;
     padding: 2rem 0;
+    width: 90%;
 
     input {
         display: flex;
@@ -232,6 +237,8 @@ color: $placeholder-color !important;
 
         width: 100%;
         max-width: 270px;
+
+        font-family: $title-font;
 
         background: $color-white;
         border: 1px solid #DCDCE4;
@@ -326,6 +333,7 @@ color: $placeholder-color !important;
 
 //Login
 #regForm.formLogin {
+    width: 90%;
     max-width: 440px;
     display: flex;
     flex-flow: column;
@@ -349,6 +357,7 @@ color: $placeholder-color !important;
 
     input {
         max-width: 440px;
+        font-family: $title-font;
     }
 
     label {
@@ -356,8 +365,8 @@ color: $placeholder-color !important;
     }
 
     .lnr-eye {
-        top: -67px;
-        left: 191px;
+        top: -69px;
+        left: 41%;
     }
 
     .box-checkbox {

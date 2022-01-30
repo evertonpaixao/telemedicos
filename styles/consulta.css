@@ -79,7 +79,7 @@ a {
   align-items: center;
   flex-flow: column;
   max-width: 258px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 .box .link-pagamento {
@@ -121,10 +121,13 @@ a {
 .box .box-border {
   border: 1px solid #006096;
   border-radius: 8px;
+  padding: 0.5rem;
 }
 
 .tab {
   padding: 2rem 0;
+  width: 90%;
+  margin: 0 auto;
 }
 .tab .icon {
   margin: 0 auto;
@@ -159,21 +162,23 @@ a {
 .lnr-eye,
 .lnr-eye-repetir {
   position: relative;
-  top: -71px;
-  left: 8px;
+  top: -97px;
+  left: 81%;
   cursor: pointer;
   background-color: #fff;
+  padding: 2px;
 }
 
 .lnr-eye-repetir {
-  top: -29px;
-  left: -12px;
+  top: -51px;
+  left: 72%;
 }
 
 #regForm {
-  max-width: 270px;
+  max-width: 300px;
   margin: 0 auto;
   padding: 2rem 0;
+  width: 90%;
 }
 #regForm input {
   display: flex;
@@ -183,6 +188,7 @@ a {
   padding: 10px 16px;
   width: 100%;
   max-width: 270px;
+  font-family: "Poppins", sans-serif;
   background: #fff;
   border: 1px solid #DCDCE4;
   box-sizing: border-box;
@@ -262,6 +268,7 @@ a {
 }
 
 #regForm.formLogin {
+  width: 90%;
   max-width: 440px;
   display: flex;
   flex-flow: column;
@@ -283,13 +290,14 @@ a {
 }
 #regForm.formLogin input {
   max-width: 440px;
+  font-family: "Poppins", sans-serif;
 }
 #regForm.formLogin label {
   width: 100%;
 }
 #regForm.formLogin .lnr-eye {
-  top: -67px;
-  left: 191px;
+  top: -69px;
+  left: 41%;
 }
 #regForm.formLogin .box-checkbox {
   display: flex;
