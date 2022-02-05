@@ -40,7 +40,7 @@
 
     <main id="main">
 
-        <form id="regForm" class="formLogin" action="painel.html">
+        <form id="regForm" class="formLogin" method="post" action="usuario-painel.html">
 
             <img src="images/logo-telemedicos.svg" alt="" width="180" />
             <h2>bem vindo(a)!</h2>
@@ -54,13 +54,26 @@
                 <label for="logado" class="checktext">Continuar logado</label>
             </div>
             <span class="lnr lnr-eye"><img src="images/icon-eye.svg" alt="" /></span>
-            <input type="submit" id="login" value="Login" />
+            <input type="submit" id="login" value="Login" /> 
 
         </form>
 
     </main>    
 
     <a class="link-esqueci" href="esqueci-senha.html">Esqueci minha senha</a>
+
+    <!--JS-->
+    <script>
+        let btn = document.querySelector('.lnr-eye');
+        btn.addEventListener('click', function () {
+            let input = document.querySelector('#password');
+            if (input.getAttribute('type') == 'password') {
+                input.setAttribute('type', 'text');
+            } else {
+                input.setAttribute('type', 'password');
+            }
+        });
+    </script>
 
 </body>
 
