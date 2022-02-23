@@ -100,9 +100,49 @@
                         <h2>Olá Nome</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis, unde!</p>
                     </div>                    
-                    <a href="usuario-marcar.html" class="link"><span>+</span> Marcar nova consulta</a>
+                    <a class="link"><span>+</span> Marcar nova consulta</a>
                 </header>
-                <div class="box-content">
+                <div class="box-content">   
+                    
+                    <div class="box-content-footer">
+                
+                        <div id="alertaPopup" class="box-pop" style="display:none">
+                            <div class="popupFixed"></div>
+                            <div class="boxPopUp">
+                                <div class="box">
+                                    <header class="header">
+                                        <p>Marcar consulta</p>
+                                        <label id="btFechar" class="btFechar">
+                                            <img src="images/close.alert.icon.svg" alt=""/>
+                                        </label>
+                                    </header>
+                                    <form class="form">
+                                        <div class="form-content">
+                                            <p>
+                                                Escolha uma nova data para sua consulta.
+                                            </p>
+                                            <fieldset class="fieldset">
+                                                <label>Data</label>
+                                                <input type="date" class="form-control" name="data" placeholder="12-12-1991" max="2299-12-31">
+                                                <label>Horário</label>
+                                                <input type="time" class="form-control" name="hora" maxlength="8" value="">
+                                            </fieldset>
+                                        </div>
+                                        <footer class="footer">
+                                            
+                                            <div class="footer-bts">
+                                                <a class="link-cancelar">Cancelar</a>
+                                                <input type="submit" value="Marcar consulta"/>
+                                            </div>
+                                        
+                                        </footer>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                     <a href="usuario-consultas.html">
                         <div class="box-icon">
                             <img src="images/icon-monitor.svg" alt="" />
@@ -119,6 +159,21 @@
     </section>
 
     <!--JS-->
+    <script src="library/jquery-3.6.0.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+
+        $(".link").click(function() {
+            $('.box-pop').css('display','block');
+        });
+        
+        $(".btFechar, .link-cancelar").click(function() {
+            $('.box-pop').css('display','none');
+        });	
+        
+    });
+    </script>
     
 
 </body>
